@@ -1,15 +1,5 @@
-import { Component } from '@angular/core';
-
-@Component({
-  templateUrl: 'search.html'
-})
-export class SearchPage {
-
-  public movies: any;
-
-  constructor() {
-
-    this.movies = [
+{
+   "Search":[
       {
          "Title":"Beta Test",
          "Year":"2016",
@@ -80,8 +70,7 @@ export class SearchPage {
          "Type":"movie",
          "Poster":"N/A"
       }
-   ]
-
-  }
-
+   ],
+   "totalResults":"622",
+   "Response":"True"
 }
