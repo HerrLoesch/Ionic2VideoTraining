@@ -7,9 +7,12 @@ export class SearchPage {
 
   public movies: any;
 
-  constructor() {
+  public showCancel: boolean;
 
-    this.movies = [
+  public searchText: string = "";
+
+  public onSearchInput() {
+this.movies = [
       {
          "Title":"Beta Test",
          "Year":"2016",
@@ -82,6 +85,9 @@ export class SearchPage {
       }
    ]
 
+  }
+
+  constructor() { 
   }
 
 }
