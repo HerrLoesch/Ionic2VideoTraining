@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
+import { Omdb } from '../../providers/omdb';
 
 @Component({
   templateUrl: 'search.html'
@@ -14,13 +14,12 @@ export class SearchPage {
 
   public onSearchInput() {
 
-      let url = "http://www.omdbapi.com/?s=" + this.searchText;
-
-      this.http.get(url).subscribe(data => this.movies = data.json().Search);
-
+     this.omdb.search(this.searchText)
+         .then(data => this.movies = data)
+         .catch(error => console.log(error));
   }
 
-  constructor(private http: Http) { 
+  constructor(private omdb: Omdb) { 
   }
 
 }

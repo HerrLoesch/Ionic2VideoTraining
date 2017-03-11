@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
+import {Omdb} from '../providers/omdb';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SearchPage } from '../pages/search/search';
 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [Omdb]
 })
 export class MyApp {
   rootPage = SearchPage;
