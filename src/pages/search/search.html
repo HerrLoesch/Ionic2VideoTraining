@@ -4,16 +4,23 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
 <ion-list>
-  <ion-item *ngFor="let movie of movies">
-    <ion-thumbnail item-left>
-      <img src="{{movie.Poster}}" >
+  <ion-item-sliding *ngFor="let movie of movies">
+  <ion-item >
+    <ion-thumbnail item-left >
+      <img *ngIf="movie.Poster !== 'N/A'" src="{{movie.Poster}}" >
     </ion-thumbnail>
     <h2>{{movie.Title}}</h2>
     <p>{{movie.Year}}</p>
     <p>{{movie.Type}}</p>    
   </ion-item>
+  <ion-item-options>
+    <button ion-button>
+      <ion-icon name="star">star</ion-icon>
+    </button>
+  </ion-item-options>
+ 
+  </ion-item-sliding>
 </ion-list>
 </ion-content>
