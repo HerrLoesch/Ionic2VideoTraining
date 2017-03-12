@@ -13,20 +13,27 @@
 {{movie.Title}}
 <p>{{movie.Year}}</p>
     </ion-card-header>
-    <img src="{{movie.Poster}}">
+    <!--<img src="{{movie.Poster}}">-->
     <ion-card-content>
       {{movie.Plot}}
-    </ion-card-content>
-
-    <ion-badge>
+  <ion-row>
+    <ion-col col-9>
+      <ion-badge>
       <ion-icon name="star-half">
       {{movie.imdbRating}}
       </ion-icon>
     </ion-badge>
+    </ion-col>
+    <ion-col>
     <ion-badge>
       <ion-icon name="text">
         {{movie.imdbVotes}}
       </ion-icon>
     </ion-badge>
+    </ion-col>
+  </ion-row>
+    </ion-card-content>
+  
   </ion-card>
+
 </ion-content>
