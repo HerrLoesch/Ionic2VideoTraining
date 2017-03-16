@@ -22,7 +22,7 @@
     <p>{{movie.Type}}</p>    
   </button>
   <ion-item-options>
-    <button ion-button>
+    <button ion-button (click)="addFavorite(movie)">
       <ion-icon name="star"></ion-icon>
       star
     </button>

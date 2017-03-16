@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, ModalController} from 'ionic-angular';
 import { Omdb } from '../../providers/omdb';
 import { MovieDetailsPage } from '../movie-details/movie-details';
+import { FavoriteInputPage } from '../favorite-input/favorite-input';
+
 
 @Component({
   templateUrl: 'search.html'
@@ -25,7 +27,11 @@ export class SearchPage {
     this.navCtrl.push(MovieDetailsPage, {'id': id })
   }
 
-  constructor(private omdb: Omdb, private navCtrl: NavController) { 
+  constructor(private omdb: Omdb, private navCtrl: NavController, private modalCtrl : ModalController) { 
   }
 
+  public addFavorite(movie: any) {
+    let modal = this.modalCtrl.create(FavoriteInputPage, movie);
+    modal.present();
+  }
 }
