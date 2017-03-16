@@ -5,6 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SearchPage } from '../pages/search/search';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
+import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { MovieDetailsPage } from '../pages/movie-details/movie-details';
   providers: [Omdb]
 })
 export class MyApp {
-  rootPage = SearchPage;
+  rootPage = FavoriteInputPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

@@ -1,13 +1,17 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>favoriteInput</ion-title>
-  </ion-navbar>
-
+<ion-toolbar>
+  
+    <ion-title>Add Favorite</ion-title>
+  <ion-buttons left>
+    <button ion-button clear (click)="dismiss()" >
+      Cancel
+    </button>
+  </ion-buttons>
+</ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
-  {{movieTitle}}
-<button (click)="dismiss()">Dismiss</button>
+  <h2>{{movieTitle}}</h2>
+<button ion-button (click)="save()" color="danger" round full>Save</button>
 </ion-content>

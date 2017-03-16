@@ -12,10 +12,11 @@ export class FavoriteInputPage {
   movieTitle:string;
 
   ionViewDidLoad() {
-
     this.movieTitle = this.navParams.get("Title");
+  }
 
-    console.log('ionViewDidLoad FavoriteInputPage');
+  save(){
+    this.dismiss();
   }
 
   dismiss(){
