@@ -12,7 +12,7 @@ import { MovieDetailsPage } from '../pages/movie-details/movie-details';
   providers: [Omdb]
 })
 export class MyApp {
-  rootPage = MovieDetailsPage;
+  rootPage = SearchPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
