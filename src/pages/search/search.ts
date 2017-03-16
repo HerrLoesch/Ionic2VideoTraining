@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { NavController} from 'ionic-angular';
 import { Omdb } from '../../providers/omdb';
+import { MovieDetailsPage } from '../movie-details/movie-details';
 
 @Component({
   templateUrl: 'search.html'
@@ -19,7 +21,11 @@ export class SearchPage {
          .catch(error => console.log(error));
   }
 
-  constructor(private omdb: Omdb) { 
+  public showDetails(id: string){
+    this.navCtrl.push(MovieDetailsPage, {'id': id })
+  }
+
+  constructor(private omdb: Omdb, private navCtrl: NavController) { 
   }
 
 }
