@@ -17,6 +17,16 @@ export class Omdb {
       });
   }
 
+  public getMovie(id: string) {
+    return new Promise(resolve => {
+        let url = this.baseUrl + "?i=" + id;
+        this.http.get(url).subscribe(data => {
+          console.log(data);
+          resolve(data.json());
+        });
+    });
+  }
+
   constructor(private http: Http) {
   }
 

@@ -1,37 +1,15 @@
 import { Component } from '@angular/core';
-
+import { Omdb } from '../../providers/omdb';
 @Component({
   selector: 'page-movie-details',
   templateUrl: 'movie-details.html'
 })
 export class MovieDetailsPage {
 
-  public movie: any;
+  public movie: any = {};
 
-  constructor() 
-    {
-      this.movie = {
-   "Title":"Beta Test",
-   "Year":"2016",
-   "Rated":"N/A",
-   "Released":"22 Jul 2016",
-   "Runtime":"88 min",
-   "Genre":"Action, Sci-Fi, Thriller",
-   "Director":"Nicholas Gyeney",
-   "Writer":"Nicholas Gyeney (story), Nicholas Gyeney, André Kirkman",
-   "Actors":"Manu Bennett, Larenz Tate, Linden Ashby, Kevon Stover",
-   "Plot":"Champion gamer Max Troy discovers events in a new video game are being mirrored in the real world, and must join forces with the game's protagonist, Orson Creed, to unravel the conspiracy before the game's sinister plot overwhelms the city.",
-   "Language":"English",
-   "Country":"USA",
-   "Awards":"N/A",
-   "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BODdlMjU0MDYtMWQ1NC00YjFjLTgxMDQtNDYxNTg2ZjJjZDFiXkEyXkFqcGdeQXVyMTU2NTcxNDg@._V1_SX300.jpg",
-   "Metascore":"N/A",
-   "imdbRating":"6.5",
-   "imdbVotes":"8,586",
-   "imdbID":"tt4244162",
-   "Type":"movie",
-   "Response":"True"
-}
+  constructor(private omdb: Omdb) {
+    this.omdb.getMovie("tt4244162").then(data => this.movie = data);
     }
 
 }
