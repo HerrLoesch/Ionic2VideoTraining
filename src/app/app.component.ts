@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import {Omdb} from '../providers/omdb';
+import {FavoriteStore} from '../providers/favorite-store';
+
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SearchPage } from '../pages/search/search';
@@ -10,7 +12,7 @@ import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [Omdb]
+  providers: [Omdb, FavoriteStore]
 })
 export class MyApp {
   rootPage = FavoriteInputPage;
