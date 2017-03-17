@@ -28,6 +28,11 @@ export class FavoriteInputPage {
   }
 
   save(){
+    let favorite = {
+      "imdbID": this.navParams.get("ImdbID"),
+      "comment": this.formData.value.comments
+    };
+
     this.dismiss();
   }
 
