@@ -13,6 +13,14 @@
 
 
 <ion-content padding>
-  <ion-textarea placeholder="comments" rows="5"></ion-textarea>
-<button ion-button (click)="save()" color="danger" round full>Save</button>
+  <h2>{{movieTitle}}</h2>
+  <p>{{movieYear}}</p>
+  
+  <form (ngSubmit)="save()" [formGroup]="formData">
+    <ion-textarea formControlName="comments" placeholder="comments" rows="5"></ion-textarea>
+    <button ion-button type="submit" 
+        [disabled]="!formData.valid"
+        color="danger" 
+        full>Save</button>
+  </form>
 </ion-content>

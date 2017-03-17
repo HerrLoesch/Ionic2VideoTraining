@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ViewController, NavParams } from 'ionic-angular';
 
 @Component({
@@ -7,12 +8,23 @@ import { ViewController, NavParams } from 'ionic-angular';
 })
 export class FavoriteInputPage {
 
-  constructor(public viewCtrl: ViewController, public navParams: NavParams) {}
+  constructor(public viewCtrl: ViewController, 
+              public navParams: NavParams,
+              private formBuilder: FormBuilder) {
 
+               this.formData = this.formBuilder.group({
+                  comments: ['', Validators.compose([Validators.minLength(3), Validators.required])]
+                });
+              }
+
+  movieYear: string;
   movieTitle:string;
 
+  formData: FormGroup;
+
   ionViewDidLoad() {
-    this.movieTitle = this.navParams.get("Title");
+    this.movieTitle = "Test"; //this.navParams.get("Title");
+    this.movieYear = "1984"; //this.navParams.get("Year");    
   }
 
   save(){
