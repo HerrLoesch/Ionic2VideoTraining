@@ -1,4 +1,5 @@
 import { Injectable, OnInit, OnDestroy } from '@angular/core';
+import { ToastController, Toast } from 'ionic-angular';
 import { NativeStorage } from 'ionic-native';
 
 
@@ -11,6 +12,7 @@ export class FavoriteStore implements OnInit, OnDestroy {
 
   public addFavorite(favorite: any) {
     this.favorites.push(favorite);
+    this.save();
   }
 
   public getFavorites(){
@@ -18,7 +20,8 @@ export class FavoriteStore implements OnInit, OnDestroy {
   }
 
   private save() {
-    NativeStorage.setItem(this.key, this.favorites);
+    NativeStorage.setItem(this.key, this.favorites)
+      .catch(error => console.log(error));
   }
 
   private load() {
@@ -35,7 +38,13 @@ export class FavoriteStore implements OnInit, OnDestroy {
     this.save();
   }
 
-  constructor() {
+  private errorToast:Toast;
+
+  constructor(private toastController:ToastController) {
+    this.errorToast = this.toastController.create({
+      message: "Favorite could not be saved.",
+      duration: 5000
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ViewController, NavParams } from 'ionic-angular';
+import { FavoriteStore } from '../../providers/favorite-store';
 
 @Component({
   selector: 'page-favorite-input',
@@ -8,9 +9,10 @@ import { ViewController, NavParams } from 'ionic-angular';
 })
 export class FavoriteInputPage {
 
-  constructor(public viewCtrl: ViewController, 
-              public navParams: NavParams,
-              private formBuilder: FormBuilder) {
+  constructor(private viewCtrl: ViewController, 
+              private navParams: NavParams,
+              private formBuilder: FormBuilder,
+              private store: FavoriteStore) {
 
                this.formData = this.formBuilder.group({
                   comments: ['', Validators.compose([Validators.minLength(3), Validators.required])]
@@ -33,7 +35,9 @@ export class FavoriteInputPage {
       "comment": this.formData.value.comments
     };
 
-    this.dismiss();
+    this.store.addFavorite(favorite);
+
+//    this.dismiss();
   }
 
   dismiss(){
