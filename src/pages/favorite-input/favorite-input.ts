@@ -30,13 +30,16 @@ export class FavoriteInputPage {
   }
 
   save(){
-    let favorite = {
-      "imdbID": this.navParams.get("ImdbID"),
-      "comment": this.formData.value.comments
-    };
+    
+    let favorite = new Favorite();
+    favorite.Comment = this.formData.value.comments;
+    favorite.Title = this.navParams.get("Title");
+    favorite.Poster = this.navParams.get("Poster");
+    favorite.imdbID = this.navParams.get("imdbID");
+    favorite.Year = this.navParams.get("Year");  
 
     this.store.addFavorite(favorite);
-
+  
 //    this.dismiss();
   }
 

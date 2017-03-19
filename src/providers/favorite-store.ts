@@ -6,11 +6,11 @@ import { ToastController } from 'ionic-angular';
 @Injectable()
 export class FavoriteStore implements OnInit, OnDestroy {
 
-  favorites:Array<any> = new Array<any>();
+  favorites:Array<Favorite> = new Array<Favorite>();
 
   key: string = "favorites";
 
-  public addFavorite(favorite: any) {
+  public addFavorite(favorite: Favorite) {
     this.favorites.push(favorite);
     this.save();
   }
