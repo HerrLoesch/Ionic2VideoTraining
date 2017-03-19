@@ -18,8 +18,7 @@
       <img *ngIf="movie.Poster !== 'N/A'" src="{{movie.Poster}}" >
     </ion-thumbnail>
     <h2>{{movie.Title}}</h2>
-    <p>{{movie.Year}}</p>
-    <p>{{movie.Type}}</p>    
+    <p>{{movie.Year}}</p>  
   </button>
   <ion-item-options>
     <button ion-button (click)="addFavorite(movie)">

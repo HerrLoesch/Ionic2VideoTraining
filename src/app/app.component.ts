@@ -8,6 +8,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { SearchPage } from '../pages/search/search';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
+import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-collection';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
   providers: [Omdb, FavoriteStore]
 })
 export class MyApp {
-  rootPage = FavoriteInputPage;
+  rootPage = FavoriteCollectionPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

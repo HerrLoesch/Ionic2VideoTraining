@@ -5,7 +5,7 @@ import { HomePage } from '../pages/home/home';
 import { SearchPage } from '../pages/search/search';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
-
+import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-collection';
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
     HomePage,
     SearchPage,
     MovieDetailsPage,
-    FavoriteInputPage
+    FavoriteInputPage,
+    FavoriteCollectionPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,7 +26,8 @@ import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
     HomePage,
     SearchPage,
     MovieDetailsPage,
-    FavoriteInputPage
+    FavoriteInputPage,
+    FavoriteCollectionPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
