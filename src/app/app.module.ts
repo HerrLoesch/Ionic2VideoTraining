@@ -6,6 +6,7 @@ import { SearchPage } from '../pages/search/search';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
 import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-collection';
+import { MovieListItemComponent } from "../components/movie-list-item/movie-list-item";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-co
     SearchPage,
     MovieDetailsPage,
     FavoriteInputPage,
-    FavoriteCollectionPage
+    FavoriteCollectionPage,
+    MovieListItemComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
