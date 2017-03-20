@@ -16,7 +16,7 @@ import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-co
   providers: [Omdb, FavoriteStore]
 })
 export class MyApp {
-  rootPage = FavoriteCollectionPage;
+  rootPage = SearchPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
