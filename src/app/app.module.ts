@@ -9,6 +9,7 @@ import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-co
 import { MovieListItemComponent } from "../components/movie-list-item/movie-list-item";
 import { FavoriteStore } from "../providers/favorite-store";
 import { SideMenuPage } from "../pages/side-menu/side-menu";
+import { TabsPage } from "../pages/tabs/tabs";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SideMenuPage } from "../pages/side-menu/side-menu";
     FavoriteInputPage,
     FavoriteCollectionPage,
     MovieListItemComponent,
-    SideMenuPage
+    SideMenuPage,
+    TabsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -33,7 +35,8 @@ import { SideMenuPage } from "../pages/side-menu/side-menu";
     MovieDetailsPage,
     FavoriteInputPage,
     FavoriteCollectionPage,
-    SideMenuPage
+    SideMenuPage,
+    TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FavoriteStore]
 })

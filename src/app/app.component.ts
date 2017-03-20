@@ -10,6 +10,7 @@ import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
 import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-collection';
 import { SideMenuPage } from "../pages/side-menu/side-menu";
+import { TabsPage } from "../pages/tabs/tabs";
 
 
 @Component({
@@ -17,7 +18,7 @@ import { SideMenuPage } from "../pages/side-menu/side-menu";
   providers: [Omdb]
 })
 export class MyApp {
-  rootPage = SideMenuPage;
+  rootPage = TabsPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
