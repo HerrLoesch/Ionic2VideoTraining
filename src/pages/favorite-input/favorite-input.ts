@@ -25,8 +25,8 @@ export class FavoriteInputPage {
   formData: FormGroup;
 
   ionViewDidLoad() {
-    this.movieTitle = "Test"; //this.navParams.get("Title");
-    this.movieYear = "1984"; //this.navParams.get("Year");    
+    this.movieTitle = this.navParams.get("Title");
+    this.movieYear = this.navParams.get("Year");    
   }
 
   save(){

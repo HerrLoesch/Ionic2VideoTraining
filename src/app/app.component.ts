@@ -9,14 +9,15 @@ import { SearchPage } from '../pages/search/search';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
 import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-collection';
+import { SideMenuPage } from "../pages/side-menu/side-menu";
 
 
 @Component({
   templateUrl: 'app.html',
-  providers: [Omdb, FavoriteStore]
+  providers: [Omdb]
 })
 export class MyApp {
-  rootPage = FavoriteCollectionPage;
+  rootPage = SideMenuPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

@@ -7,6 +7,7 @@ import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 import { FavoriteInputPage } from '../pages/favorite-input/favorite-input';
 import { FavoriteCollectionPage } from '../pages/favorite-collection/favorite-collection';
 import { MovieListItemComponent } from "../components/movie-list-item/movie-list-item";
+import { FavoriteStore } from "../providers/favorite-store";
 
 
 @NgModule({
@@ -31,6 +32,6 @@ import { MovieListItemComponent } from "../components/movie-list-item/movie-list
     FavoriteInputPage,
     FavoriteCollectionPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FavoriteStore]
 })
 export class AppModule {}

@@ -9,8 +9,6 @@
 
 <ion-content padding>
   <ion-list>
-      <movie-list-item [movie]="favorites[idx]"
-        *ngFor="let favorite of favorites;let idx = index;">
-      </movie-list-item>          
-      </ion-list>
+      <movie-list-item *ngFor="let favorite of favorites;let idx = index;" [movie]="favorites[idx]"></movie-list-item>
+  </ion-list>
 </ion-content>

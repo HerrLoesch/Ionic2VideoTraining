@@ -13,14 +13,13 @@
   ></ion-searchbar>
 <ion-list>
   <ion-item-sliding *ngFor="let movie of movies;let idx = index;"> 
-    <movie-list-item [movie]="movies[idx]"></movie-list-item>
+  <movie-list-item [movie]="movies[idx]"></movie-list-item>
   <ion-item-options>
     <button ion-button (click)="addFavorite(movie)">
       <ion-icon name="star"></ion-icon>
       star
     </button>
-  </ion-item-options>
- 
+  </ion-item-options> 
   </ion-item-sliding>
 </ion-list>
 </ion-content>
