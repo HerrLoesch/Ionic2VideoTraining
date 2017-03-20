@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle ion-button icon-only>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Search</ion-title>
   </ion-navbar>
 </ion-header>
@@ -16,7 +13,14 @@
   ></ion-searchbar>
 <ion-list>
   <ion-item-sliding *ngFor="let movie of movies;let idx = index;"> 
-  <movie-list-item [movie]="movies[idx]"></movie-list-item>
+    <button ion-item (click)="showDetails(movie.imdbID)">
+    <ion-thumbnail item-left >
+      <img *ngIf="movie.Poster !== 'N/A'" src="{{movie.Poster}}" >
+    </ion-thumbnail>
+    <h2>{{movie.Title}}</h2>
+    <p>{{movie.Year}}</p>
+    <p>{{movie.Comment}}</p>        
+  </button>
   <ion-item-options>
     <button ion-button (click)="addFavorite(movie)">
       <ion-icon name="star"></ion-icon>

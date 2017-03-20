@@ -1,6 +1,7 @@
 import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { NativeStorage } from 'ionic-native';
 import { ToastController } from 'ionic-angular';
+import { Favorite } from "../domain/favorite";
 
 
 @Injectable()

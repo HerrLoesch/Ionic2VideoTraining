@@ -1,4 +1,4 @@
-class Movie {
+export class Movie {
     public Title : string;
     public Year : number;
     public Poster : string;

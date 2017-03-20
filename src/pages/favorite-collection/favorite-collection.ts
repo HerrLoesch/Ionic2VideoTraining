@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoriteStore } from '../../providers/favorite-store';
+import { Favorite } from "../../domain/favorite";
 
 @Component({
   selector: 'page-favorite-collection',

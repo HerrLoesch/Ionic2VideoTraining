@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ViewController, NavParams } from 'ionic-angular';
 import { FavoriteStore } from '../../providers/favorite-store';
+import { Favorite } from "../../domain/favorite";
 
 @Component({
   selector: 'page-favorite-input',
