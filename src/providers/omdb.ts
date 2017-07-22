@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class Omdb {
 
-  private baseUrl : string = "http://www.omdbapi.com/";
+  private baseUrl : string = "http://moviemaniabackend.azurewebsites.net/api/";
 
   public search(searchText : string)  {
 
